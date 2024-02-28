@@ -1,0 +1,9 @@
+stages:
+  ingredient_list:
+    cmd: perl ./stages/00_ingredient-list.pl
+    deps:
+      - stages/00_ingredient-list.pl
+      - stages/CIR_Scraper/Base.pm
+      - stages/CIR_Scraper/IngredientList.pm
+    outs:
+      - brick/ingredient-list.parquet

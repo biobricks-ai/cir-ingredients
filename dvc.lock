@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  ingredient_list:
+    cmd: perl ./stages/00_ingredient-list.pl
+    deps:
+    - path: stages/00_ingredient-list.pl
+      hash: md5
+      md5: 0e40a71c3a35e6dd86421b3e8ffbe234
+      size: 1054
+    - path: stages/CIR_Scraper/Base.pm
+      hash: md5
+      md5: 94732edd64e6e68d6d01a360cc99c3af
+      size: 475
+    - path: stages/CIR_Scraper/IngredientList.pm
+      hash: md5
+      md5: 7c12d601592884d7eac62380e912eab3
+      size: 1436
+    outs:
+    - path: brick/ingredient-list.parquet
+      hash: md5
+      md5: db6092ff46cc063ffee2b81ca77384bf
+      size: 187874
