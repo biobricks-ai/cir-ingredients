@@ -72,22 +72,28 @@
       };
     } //
     flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import nixpkgs {
+      with import nixpkgs {
         inherit system;
         overlays = [ self.overlays.default ];
-      }; in {
+      }; {
         devShells.default = dev-shell.devShells.${system}.default.overrideAttrs
-          (oldAttrs: {
+          (oldAttrs:
+            let
+              perlDeps =
+                with perlPackages; [
+                  DataPrinter
+                  HashFold
+                  WWWMechanize
+                  WebScraper
+                  LWPProtocolhttps
+                  Moo
+                  TextCSV_XS
+                  PathTiny
+                  ListUtilsBy
+                ];
+            in {
             buildInputs = oldAttrs.buildInputs ++ [
-              pkgs.perlPackages.DataPrinter
-              pkgs.perlPackages.HashFold
-              pkgs.perlPackages.WWWMechanize
-              pkgs.perlPackages.WebScraper
-              pkgs.perlPackages.LWPProtocolhttps
-              pkgs.perlPackages.Moo
-              pkgs.perlPackages.TextCSV_XS
-              pkgs.perlPackages.PathTiny
-              pkgs.perlPackages.ListUtilsBy
+              perlDeps
             ];
           });
       });
