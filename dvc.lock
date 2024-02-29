@@ -5,7 +5,7 @@ stages:
     deps:
     - path: stages/00_ingredient-list.pl
       hash: md5
-      md5: 0e40a71c3a35e6dd86421b3e8ffbe234
+      md5: 66c60ec2365cba35bfaab8473951ccd4
       size: 1054
     - path: stages/CIR_Scraper/Base.pm
       hash: md5
@@ -16,7 +16,7 @@ stages:
       md5: 7c12d601592884d7eac62380e912eab3
       size: 1436
     outs:
-    - path: brick/ingredient-list.parquet
+    - path: brick/ingredient_list.parquet
       hash: md5
       md5: db6092ff46cc063ffee2b81ca77384bf
       size: 187874

@@ -39,7 +39,7 @@ sub main {
 
 		  print(paste('Reading from file', input_data_file))
 		  read.csv(input_data_file,  stringsAsFactors = FALSE) |>
-		    arrow::write_parquet("brick/ingredient-list.parquet")
+		    arrow::write_parquet("brick/ingredient_list.parquet")
 		R
 	);
 

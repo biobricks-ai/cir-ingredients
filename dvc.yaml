@@ -6,4 +6,4 @@ stages:
       - stages/CIR_Scraper/Base.pm
       - stages/CIR_Scraper/IngredientList.pm
     outs:
-      - brick/ingredient-list.parquet
+      - brick/ingredient_list.parquet
